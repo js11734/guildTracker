@@ -26,11 +26,9 @@ li a {
 li a:hover {
     background-color: #d48db9;
 }
-.navigationaspects{
-    
-}
 
-.logout{ 
+
+.logout { 
     float: right;
     
 }
