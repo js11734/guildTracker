@@ -8,6 +8,36 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="login.html">Logout</a>
+    <a href="index.html">Logout</a>
+
+
+
+<h2 id="greeting"></h2>
+
+    <script>
+    window.onload = function()
+    {
+        var username = getCookie("username");
+        document.getElementById("username");
+        document.getElementById("greeting").innerHTML = "Welcome, " + username;
+    }
+    function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+
+  return " ";
+}
+
+    </script>
 </body>
 </html>

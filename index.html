@@ -2,19 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li>
-                <a href="login.html">Login</a> 
-            </li>
-        </ul>
-    </nav>
-<h1>Guild Tracker</h1>
+   <h1>Guild Finder</h1>
+   <!--Form to enter username and password, the username is saved as a cookie -->
+   <form>
+    <label for ="username">Username</label>
+    <input type ="text" id ="username" name="username">
+    <label for ="password">Password:</label>
+    <input type = "password" id="password" name="password">
+   </form>
+    <button  type="button" id="loginButton">Login</button>
+    <!--Event listener listening for a click event, creates a cookie named username that is accessible on each page-->
+    <script type="text/javascript">
+        document.getElementById("loginButton").onclick = function()
+        {
+            var username = document.getElementById("username").value;
+            document.cookie="username=" + username + "; path=";
+
+            location.href="guildHome.html";
+        };
+    </script>
 </body>
-</html> 
+</html>
